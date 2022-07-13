@@ -17,7 +17,6 @@ pipeline {
             steps {
                 sh 'npm --version'
                 sh 'npm install'
-                sh 'chmod u+x app.js'
             }
         }
 
@@ -29,6 +28,7 @@ pipeline {
 
         stage('deployWebsite'){
             steps{
+                sh 'chmod u+x app.js'
                 sh 'nodemon ./app.js'
             }
 
